@@ -99,7 +99,8 @@ def main(args):
         # train the classifier on the current batch/task
         _, _, stats, preprocessed_dataset = train_net_ewc(
             opt, ewc, criterion, args.batch_size, train_x, train_y, t,
-            args.epochs, preproc=preprocess_imgs
+            args.epochs, preproc=preprocess_imgs,
+            ewc_explosion_multr_cap=args.ewc_explosion_multr_cap,
         )
         ewc.register_ewc_params(preprocessed_dataset, args.batch_size, dataset.nbatch[dataset.scenario])
 
@@ -176,6 +177,9 @@ if __name__ == "__main__":
                              'for replay.')
     parser.add_argument('--ewc_weight', type=int, default=100,
                         help='weight for elastic weight consolidation.')
+    parser.add_argument('--ewc_explosion_multr_cap', type=int, default=10,
+                        help='limit max multiplier of ewc loss.')
+                        
 
     # Misc
     parser.add_argument('--sub_dir', type=str, default="multi-task-nc",

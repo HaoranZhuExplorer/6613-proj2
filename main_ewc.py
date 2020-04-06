@@ -175,7 +175,7 @@ if __name__ == "__main__":
     parser.add_argument('--replay_examples', type=int, default=0,
                         help='data examples to keep in memory for each batch '
                              'for replay.')
-    parser.add_argument('--ewc_weight', type=int, default=100,
+    parser.add_argument('--ewc_weight', type=int, default=50,
                         help='weight for elastic weight consolidation.')
     parser.add_argument('--ewc_explosion_multr_cap', type=int, default=10,
                         help='limit max multiplier of ewc loss.')

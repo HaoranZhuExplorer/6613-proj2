@@ -31,7 +31,7 @@ from ewc.elastic_weight_consolidation import ElasticWeightConsolidation
 from torch.utils.data import TensorDataset
 
 def train_net_ewc(optimizer, ewc, criterion, mb_size, x, y, t,
-                  train_ep, preproc=None, use_cuda=True, mask=None, ewc_explosion_multr_cap=10):
+                  train_ep, preproc=None, use_cuda=True, mask=None, ewc_explosion_multr_cap=15):
     """
     (EWC Version)
     Train a Pytorch model from pre-loaded tensors.
